@@ -35,9 +35,9 @@ public class Dish {
 
     @Override
     public String toString() {
-        return "Dish:" +
-                "\nnameOfDish->'" + nameOfDish +
-                "\npriceOfDish->" + priceOfDish +
-                "\ntypeOfDish->'" + typeOfDish;
+        return "\nDish details:" +
+                "\nname->" + nameOfDish +
+                "\nprice->" + priceOfDish +
+                "\ntype->" + typeOfDish;
     }
 }

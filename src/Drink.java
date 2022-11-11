@@ -35,9 +35,9 @@ public class Drink {
 
     @Override
     public String toString() {
-        return "Drink:" +
-                "\nnameOfDrink->'" + nameOfDrink +
-                "\npriceOfDrink->" + priceOfDrink +
-                "\ntypeOfDrink->'" + typeOfDrink;
+        return "\nDrink details:" +
+               "\nname->" + nameOfDrink +
+                "\nprice->" + priceOfDrink +
+                "\ntype->"+ typeOfDrink;
     }
 }
