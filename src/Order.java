@@ -5,7 +5,7 @@ public class Order implements Orderable {
     private String date;//dd-mm-yyy
     private String timeOfCreation;//hh:mm:ss
     private int tableNumber;
-    private String orderStatus;//"served", "paid", "cooking" or "prepared"
+    private String orderStatus;//"served", "paid", "cooking" or "prepared" //ENUM
     private List<Dish> dishes = new ArrayList<>();
     private List<Drink> drinks = new ArrayList<>();
     double totalSum = 0.0;

@@ -1,14 +1,14 @@
 public class Dish {
-    private String nameOfDish;
+    private String name;
     private double priceOfDish;
     private String typeOfDish;//appetizer, main course, dessert
 
-    public String getNameOfDish() {
-        return nameOfDish;
+    public String getName() {
+        return name;
     }
 
-    public void setNameOfDish(String nameOfDish) {
-        this.nameOfDish = nameOfDish;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getPriceOfDish() {
@@ -27,8 +27,8 @@ public class Dish {
         this.typeOfDish = typeOfDish;
     }
 
-    public Dish(String nameOfDish, double priceOfDish, String typeOfDish) {
-        this.nameOfDish = nameOfDish;
+    public Dish(String name, double priceOfDish, String typeOfDish) {
+        this.name = name;
         this.priceOfDish = priceOfDish;
         this.typeOfDish = typeOfDish;
     }
@@ -36,7 +36,7 @@ public class Dish {
     @Override
     public String toString() {
         return "\nDish details:" +
-                "\nname->" + nameOfDish +
+                "\nname->" + name +
                 "\nprice->" + priceOfDish +
                 "\ntype->" + typeOfDish+'\n';
     }
