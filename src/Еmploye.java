@@ -1,5 +1,13 @@
 abstract public class Еmploye {
-    String name;
-    int personalId;
+    private String name;
+    abstract public void showPossibleActions();
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }
