@@ -10,7 +10,7 @@ private double dailyIncome;
     }
 
     @Override
-    public String changeStatus(Order currentOrder) {
+    public String changeOrderStatus(Order currentOrder) {
         //
         return null; //currentOrder.setStatus("served" or"paid");
     }
@@ -30,8 +30,8 @@ private double dailyIncome;
 
     @Override
     public String toString() {
-        return "Steward details:"+
-                "\name->"+super.getName()+
-                "\ndailyIncome->"+this.dailyIncome;
+        return "Steward details:" +
+                "\nname->" + super.getName() +
+                "\ndaily income->" + getDailyIncome();
     }
 }

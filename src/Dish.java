@@ -38,6 +38,6 @@ public class Dish {
         return "\nDish details:" +
                 "\nname->" + nameOfDish +
                 "\nprice->" + priceOfDish +
-                "\ntype->" + typeOfDish;
+                "\ntype->" + typeOfDish+'\n';
     }
 }
