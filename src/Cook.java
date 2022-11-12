@@ -14,7 +14,7 @@ private int countOfPreparedDishes;
     }
 
     @Override
-    public String changeStatus(Order currentOrder) {
+    public String changeOrderStatus(Order currentOrder) {
 
         return null;//currentOrder.setStatus("cooking" or "prepared");
     }
@@ -28,6 +28,6 @@ private int countOfPreparedDishes;
     public String toString() {
         return "Cook details:" +
                 "\nname->"+super.getName()+
-                "\ncountOfPreparedDishes->" + this.countOfPreparedDishes;
+                "\ncount of prepared dishes->" + getCountOfPreparedDishes();
     }
 }

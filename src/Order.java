@@ -91,12 +91,12 @@ public class Order implements Orderable {
     @Override
     public String toString() {
         return "Order:" +
-                "\ndate->'" + date +
-                "\ntimeOfCreation->'" + timeOfCreation +
-                "\ntableNumber->" + tableNumber +
-                "\norderStatus->'" + orderStatus +
-                "\ndishes->" + dishes +
-                "\ndrinks->" + drinks +
-                "\ntotalSum->" + totalSum;
+                "\ndate->'" + getDate() +
+                "\ntime of creation->'" + getTimeOfCreation() +
+                "\ntable number->" + getTableNumber() +
+                "\norder status->'" + getOrderStatus() +
+                "\ndishes->" + getDishes() +
+                "\ndrinks->" + getDrinks() +
+                "\ntotal sum->" + getTotalSum();
     }
 }

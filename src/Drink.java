@@ -38,6 +38,6 @@ public class Drink {
         return "\nDrink details:" +
                "\nname->" + nameOfDrink +
                 "\nprice->" + priceOfDrink +
-                "\ntype->"+ typeOfDrink;
+                "\ntype->"+ typeOfDrink+'\n';
     }
 }

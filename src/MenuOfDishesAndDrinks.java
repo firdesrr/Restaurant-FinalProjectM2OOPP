@@ -27,7 +27,7 @@ public class MenuOfDishesAndDrinks {
     @Override
     public String toString() {
         return "Menu:" +
-                '\n'+dishes +
+                '\n'+dishes +'\n'+
         '\n'+ drinks;
     }
 }
