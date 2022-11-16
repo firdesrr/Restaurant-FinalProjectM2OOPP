@@ -1,7 +1,7 @@
 public class Drink {
     private String nameOfDrink;
     private double priceOfDrink;
-    private String typeOfDrink;//alcoholic, non-alcoholic, hot drink
+    private TypeOfDrink typeOfDrink;
 
     public String getNameOfDrink() {
         return nameOfDrink;
@@ -19,15 +19,15 @@ public class Drink {
         this.priceOfDrink = priceOfDrink;
     }
 
-    public String getTypeOfDrink() {
+    public TypeOfDrink getTypeOfDrink() {
         return typeOfDrink;
     }
 
-    public void setTypeOfDrink(String typeOfDrink) {
+    public void setTypeOfDrink(TypeOfDrink typeOfDrink) {
         this.typeOfDrink = typeOfDrink;
     }
 
-    public Drink(String nameOfDrink, double priceOfDrink, String typeOfDrink) {
+    public Drink(String nameOfDrink, double priceOfDrink, TypeOfDrink typeOfDrink) {
         this.nameOfDrink = nameOfDrink;
         this.priceOfDrink = priceOfDrink;
         this.typeOfDrink = typeOfDrink;

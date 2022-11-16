@@ -5,7 +5,7 @@ public class Order implements Orderable {
     private String date;//dd-mm-yyy
     private String timeOfCreation;//hh:mm:ss
     private int tableNumber;
-    private String orderStatus;//"served", "paid", "cooking" or "prepared" //ENUM
+    private OrderStatus orderStatus;
     private List<Dish> dishes = new ArrayList<>();
     private List<Drink> drinks = new ArrayList<>();
     double totalSum = 0.0;
@@ -46,11 +46,11 @@ public class Order implements Orderable {
         this.tableNumber = tableNumber;
     }
 
-    public String getOrderStatus() {
+    public OrderStatus getOrderStatus() {
         return orderStatus;
     }
 
-    public void setOrderStatus(String orderStatus) {
+    public void setOrderStatus(OrderStatus orderStatus) {
         this.orderStatus = orderStatus;
     }
 
@@ -78,7 +78,7 @@ public class Order implements Orderable {
         this.totalSum = totalSum;
     }
 
-    public Order(String date, String timeOfCreation, int tableNumber, String orderStatus, List<Dish> dishes, List<Drink> drinks, double totalSum) {
+    public Order(String date, String timeOfCreation, int tableNumber, OrderStatus orderStatus, List<Dish> dishes, List<Drink> drinks, double totalSum) {
         this.date = date;
         this.timeOfCreation = timeOfCreation;
         this.tableNumber = tableNumber;
