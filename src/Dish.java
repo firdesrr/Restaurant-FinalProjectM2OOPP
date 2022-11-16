@@ -1,7 +1,7 @@
 public class Dish {
     private String name;
     private double priceOfDish;
-    private String typeOfDish;//appetizer, main course, dessert
+    private TypeOfDish typeOfDish;
 
     public String getName() {
         return name;
@@ -19,15 +19,15 @@ public class Dish {
         this.priceOfDish = priceOfDish;
     }
 
-    public String getTypeOfDish() {
+    public TypeOfDish getTypeOfDish() {
         return typeOfDish;
     }
 
-    public void setTypeOfDish(String typeOfDish) {
+    public void setTypeOfDish(TypeOfDish typeOfDish) {
         this.typeOfDish = typeOfDish;
     }
 
-    public Dish(String name, double priceOfDish, String typeOfDish) {
+    public Dish(String name, double priceOfDish, TypeOfDish typeOfDish) {
         this.name = name;
         this.priceOfDish = priceOfDish;
         this.typeOfDish = typeOfDish;
