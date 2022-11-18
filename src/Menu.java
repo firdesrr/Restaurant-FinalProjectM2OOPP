@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuOfDishesAndDrinks {
+public class Menu {
   private  List<Dish> dishes=new ArrayList<>();
   private  List<Drink> drinks=new ArrayList<>();
+
+
 
     public List<Dish> getDishes() {
         return dishes;
@@ -20,14 +22,21 @@ public class MenuOfDishesAndDrinks {
     public void setDrinks(List<Drink> drinks) {
         this.drinks = drinks;
     }
-    public MenuOfDishesAndDrinks(List<Dish> dishes, List<Drink> drinks) {
+
+    public Menu() {
+
+    }
+    public Menu(List<Dish> dishes, List<Drink> drinks) {
         this.dishes = dishes;
         this.drinks = drinks;
     }
+
+
+
     @Override
     public String toString() {
         return "Menu:" +
-                '\n'+dishes +'\n'+
-        '\n'+ drinks;
+                '\n'+getDishes() +'\n'+
+        '\n'+ getDrinks();
     }
 }

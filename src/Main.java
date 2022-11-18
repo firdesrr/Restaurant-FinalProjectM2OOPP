@@ -6,6 +6,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        Steward steward=new Steward("Petrov",0.0);
+        steward.showPossibleActions();
+
         System.out.println("************************************************");
         System.out.println("***Restaurant service information system***");
         System.out.println("************************************************");

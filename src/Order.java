@@ -9,7 +9,7 @@ public class Order implements Orderable {
     private List<Dish> dishes = new ArrayList<>();
     private List<Drink> drinks = new ArrayList<>();
     private double totalSum = 0.0;
-    private static boolean isNew=true;
+    private boolean isTableFree =true;
 
     @Override
     public void addDish(Dish dish) {
@@ -79,18 +79,18 @@ public class Order implements Orderable {
         this.totalSum = totalSum;
     }
 
-    public static boolean isIsNew() {
-        return isNew;
+    public boolean isTableFree() {
+        return isTableFree;
     }
 
-    public static void setIsNew(boolean isNew) {
-        Order.isNew = isNew;
+    public void setTableFree(boolean tableFree) {
+        isTableFree = tableFree;
     }
 
     public Order() {
     }
 
-    public Order(String date, String timeOfCreation, int tableNumber, OrderStatus orderStatus, List<Dish> dishes, List<Drink> drinks, double totalSum) {
+    public Order(String date, String timeOfCreation, int tableNumber, OrderStatus orderStatus, List<Dish> dishes, List<Drink> drinks, double totalSum, boolean isTableFree) {
         this.date = date;
         this.timeOfCreation = timeOfCreation;
         this.tableNumber = tableNumber;
@@ -98,9 +98,10 @@ public class Order implements Orderable {
         this.dishes = dishes;
         this.drinks = drinks;
         this.totalSum = totalSum;
+        this.isTableFree = isTableFree;
     }
 
-       public String toString() {
+    public String toString() {
         return "Order:" +
                 "\ndate->'" + getDate() +
                 "\ntime of creation->'" + getTimeOfCreation() +
