@@ -3,8 +3,8 @@ import java.util.List;
 public class Cook extends Еmploye {
     private int countOfPreparedOrders = 0;
 
-    public Cook(String name, List<Order> orders, int countOfPreparedOrders) {
-        super(name, orders);
+    public Cook(String name, int countOfPreparedOrders) {
+        super(name);
         this.countOfPreparedOrders = countOfPreparedOrders;
     }
 
@@ -24,7 +24,7 @@ public class Cook extends Еmploye {
 
     public List<Order> viewOrders(List<Order> orders) {
         for (Order order : orders) {
-            if (order.isIsNew()) {
+            if (order.getOrderStatus()==OrderStatus.NEW) {
                 order.setOrderStatus(OrderStatus.COOKING);
             }
         }
@@ -32,7 +32,7 @@ public class Cook extends Еmploye {
     }
 
     public Order finishOrder(Order order) {
-        if (order.isIsNew() && order.getOrderStatus() == OrderStatus.COOKING) {
+        if (order.isTableFree() && order.getOrderStatus() == OrderStatus.COOKING) {
             order.setOrderStatus(OrderStatus.PREPEARD);
             this.countOfPreparedOrders++;
             return order;
