@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="558bd6dc-aff9-40b9-b50e-a79bac7c3453" name="Changes" comment="consultation with Emo">
-      <change afterPath="$PROJECT_DIR$/src/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TypeOfDish.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TypeOfDrink.java" afterDir="false" />
+    <list default="true" id="558bd6dc-aff9-40b9-b50e-a79bac7c3453" name="Changes" comment="Added Enum classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StatusChangeable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Steward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steward.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Еmploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Еmploye.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,7 +41,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Method_Impementation" />
+        <entry key="$PROJECT_DIR$" value="InitializeDishes" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -134,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668266150089</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Enum classes">
+      <created>1668633897972</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668633897972</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,6 +161,7 @@
     <MESSAGE value="Added objects in Main" />
     <MESSAGE value="Edit toString() in Cook, Steward ..." />
     <MESSAGE value="consultation with Emo" />
-    <option name="LAST_COMMIT_MESSAGE" value="consultation with Emo" />
+    <MESSAGE value="Added Enum classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Enum classes" />
   </component>
 </project>

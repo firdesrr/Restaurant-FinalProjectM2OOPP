@@ -1,5 +1,9 @@
-public class Steward extends Еmploye implements  StatusChangeable{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Steward extends Еmploye {
 private double dailyIncome;
+
 
     public double getDailyIncome() {
         return dailyIncome;
@@ -9,23 +13,25 @@ private double dailyIncome;
         this.dailyIncome = dailyIncome;
     }
 
-    @Override
-    public String changeOrderStatus(Order currentOrder) {
-        //
-        return null; //currentOrder.setStatus("served" or"paid");
-    }
+
 
     @Override
     public void showPossibleActions() {
         //actions for steward
     }
 
+    @Override
+    public List<Order> viewOrders(List<Order> orders) {
+               return orders;
+    }
+
     public void showMenu(MenuOfDishesAndDrinks menu){
         System.out.println( menu);
     }
 
-    public Steward(String name) {
-        super.setName(name);
+    public Steward(String name, List<Order> orders, double dailyIncome) {
+        super(name, orders);
+        this.dailyIncome = dailyIncome;
     }
 
     @Override

@@ -5,10 +5,11 @@ public class Order implements Orderable {
     private String date;//dd-mm-yyy
     private String timeOfCreation;//hh:mm:ss
     private int tableNumber;
-    private OrderStatus orderStatus;
+    private OrderStatus orderStatus=OrderStatus.NEW;
     private List<Dish> dishes = new ArrayList<>();
     private List<Drink> drinks = new ArrayList<>();
-    double totalSum = 0.0;
+    private double totalSum = 0.0;
+    private static boolean isNew=true;
 
     @Override
     public void addDish(Dish dish) {
@@ -78,6 +79,17 @@ public class Order implements Orderable {
         this.totalSum = totalSum;
     }
 
+    public static boolean isIsNew() {
+        return isNew;
+    }
+
+    public static void setIsNew(boolean isNew) {
+        Order.isNew = isNew;
+    }
+
+    public Order() {
+    }
+
     public Order(String date, String timeOfCreation, int tableNumber, OrderStatus orderStatus, List<Dish> dishes, List<Drink> drinks, double totalSum) {
         this.date = date;
         this.timeOfCreation = timeOfCreation;
@@ -88,8 +100,7 @@ public class Order implements Orderable {
         this.totalSum = totalSum;
     }
 
-    @Override
-    public String toString() {
+       public String toString() {
         return "Order:" +
                 "\ndate->'" + getDate() +
                 "\ntime of creation->'" + getTimeOfCreation() +
