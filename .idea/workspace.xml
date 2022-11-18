@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="558bd6dc-aff9-40b9-b50e-a79bac7c3453" name="Changes" comment="Added Enum classes">
+    <list default="true" id="558bd6dc-aff9-40b9-b50e-a79bac7c3453" name="Changes" comment="Created class OrderFactory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StatusChangeable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Steward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steward.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Еmploye.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Еmploye.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +18,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="master" />
+  </component>
   <component name="Git.Settings">
     <favorite-branches>
       <branch-storage>
@@ -33,6 +29,8 @@
             <value>
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="Add_fields_in_classes" />
+                <branch-info repo="$PROJECT_DIR$" source="InitializeDishes" />
+                <branch-info repo="$PROJECT_DIR$" source="Method_Impementation" />
               </list>
             </value>
           </entry>
@@ -141,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668633897972</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Created class OrderFactory">
+      <created>1668771469961</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1668771469961</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +167,7 @@
     <MESSAGE value="Edit toString() in Cook, Steward ..." />
     <MESSAGE value="consultation with Emo" />
     <MESSAGE value="Added Enum classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Enum classes" />
+    <MESSAGE value="Created class OrderFactory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created class OrderFactory" />
   </component>
 </project>
