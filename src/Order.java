@@ -4,12 +4,12 @@ import java.util.List;
 public class Order implements Orderable {
     private String date;//dd-mm-yyy
     private String timeOfCreation;//hh:mm:ss
-    private int tableNumber;
+    private Table table;
     private OrderStatus orderStatus=OrderStatus.NEW;
     private List<Dish> dishes = new ArrayList<>();
     private List<Drink> drinks = new ArrayList<>();
     private double totalSum = 0.0;
-    private boolean isTableFree =true;
+
 
     @Override
     public void addDish(Dish dish) {
@@ -39,15 +39,7 @@ public class Order implements Orderable {
         this.timeOfCreation = timeOfCreation;
     }
 
-    public int getTableNumber() {
-        return tableNumber;
-    }
-
-    public void setTableNumber(int tableNumber) {
-        this.tableNumber = tableNumber;
-    }
-
-    public OrderStatus getOrderStatus() {
+       public OrderStatus getOrderStatus() {
         return orderStatus;
     }
 
@@ -79,36 +71,39 @@ public class Order implements Orderable {
         this.totalSum = totalSum;
     }
 
-    public boolean isTableFree() {
-        return isTableFree;
+
+    public Table getTable() {
+        return table;
     }
 
-    public void setTableFree(boolean tableFree) {
-        isTableFree = tableFree;
+    public void setTable(Table table) {
+        this.table = table;
     }
 
-    public Order() {
+
+    public Order(String s, String s1, int i, boolean b, OrderStatus aNew, List<Dish> dishes, List<Drink> drinks, double v) {
     }
 
-    public Order(String date, String timeOfCreation, int tableNumber, OrderStatus orderStatus, List<Dish> dishes, List<Drink> drinks, double totalSum, boolean isTableFree) {
+    public Order(String date, String timeOfCreation, Table table, OrderStatus orderStatus, List<Dish> dishes, List<Drink> drinks, double totalSum) {
         this.date = date;
         this.timeOfCreation = timeOfCreation;
-        this.tableNumber = tableNumber;
+        this.table = table;
         this.orderStatus = orderStatus;
         this.dishes = dishes;
         this.drinks = drinks;
         this.totalSum = totalSum;
-        this.isTableFree = isTableFree;
     }
 
+    @Override
     public String toString() {
-        return "Order:" +
-                "\ndate->'" + getDate() +
-                "\ntime of creation->'" + getTimeOfCreation() +
-                "\ntable number->" + getTableNumber() +
-                "\norder status->'" + getOrderStatus() +
-                "\ndishes->" + getDishes() +
-                "\ndrinks->" + getDrinks() +
-                "\ntotal sum->" + getTotalSum();
+        return "Order{" +
+                "date='" + date + '\'' +
+                ", timeOfCreation='" + timeOfCreation + '\'' +
+                ", table=" + table +
+                ", orderStatus=" + orderStatus +
+                ", dishes=" + dishes +
+                ", drinks=" + drinks +
+                ", totalSum=" + totalSum +
+                '}';
     }
 }

@@ -1,4 +1,6 @@
 import java.util.List;
+import java.util.Scanner;
+
 
 public class Cook extends Еmploye {
     private int countOfPreparedOrders = 0;
@@ -19,24 +21,44 @@ public class Cook extends Еmploye {
 
     @Override
     public void showPossibleActions() {
-        //actions for cook
+
+        System.out.println( "1. Show new orders\n+" +
+                "2. Cook meals\n" +
+                "3. Finish order");
+        List<Order> orders=OrderFactory.createListOfOrders();
+        Order order=OrderFactory.createAnOrder();
+        System.out.print( "Choose an action: ");
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        switch (n) {
+            case 1: this.viewOrders(orders);
+            case 2: this.cookMeals(orders);
+            case 3: this.finishOrder(order);
+        }
     }
 
-    public List<Order> viewOrders(List<Order> orders) {
+    public String viewOrders(List<Order> orders) {
+        String result=null;
         for (Order order : orders) {
-            if (order.getOrderStatus()==OrderStatus.NEW) {
-                order.setOrderStatus(OrderStatus.COOKING);
+            if (order.getOrderStatus() == OrderStatus.NEW) {
+              result= order.toString();
+            } else {
+                result= "No new orders.";
             }
         }
-        return orders;
+        return result;
+    }
+    public void cookMeals(List<Order> orders) {
+        for (Order order : orders) {
+            order.setOrderStatus(OrderStatus.COOKING);
+            System.out.println("The order for table number " + order.getTable() + " is being cooked.");
+        }
     }
 
-    public Order finishOrder(Order order) {
-        if (order.isTableFree() && order.getOrderStatus() == OrderStatus.COOKING) {
-            order.setOrderStatus(OrderStatus.PREPEARD);
+    public void finishOrder(Order order) {
+        order.setOrderStatus(OrderStatus.PREPARED);
+        System.out.println( "The order for table number " +order.getTable().getTableNum() + " has being prepared.");
             this.countOfPreparedOrders++;
-            return order;
-        } else return null;
     }
 
     @Override

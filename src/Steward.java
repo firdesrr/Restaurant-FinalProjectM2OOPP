@@ -8,7 +8,7 @@ private List <Dish> dishes=new ArrayList<>();
 private List <Drink> drinks=new ArrayList<>();
 private Menu menu=new Menu(dishes,drinks);
 private List <Order> orders=new ArrayList<>();
-private Order order;
+
 
 
 
@@ -25,25 +25,34 @@ private Order order;
     @Override
     public void showPossibleActions() {
         //actions for steward
+
         System.out.println( "Steward's actions: \n" +
                 "1. Show menu\n" +
                 "2. View orders\n" +
                 "3. Create an order\n" +
-                "4. Edit an order - add a dish/drink\n" +
-                "5. Edit an order - remove a dish/drink\n");
+                "4. Edit an order - Add a dish/drink\n" +
+                "5. Edit an order - Remove a dish/drink\n");
         System.out.print( "Choose an action: ");
         Scanner scan=new Scanner(System.in);
         int n=scan.nextInt();
         switch (n) {
             case 1: this.showMenu(menu);
             case 2: this.viewOrders(orders);
-            case 3: this.createAnOrder(order);
+            case 3: OrderFactory.createAnOrder();
         }
     }
 
     @Override
-    public List<Order> viewOrders(List<Order> orders) {
-               return orders;
+    public String viewOrders(List<Order> orders) {
+        String result=null;
+        for (Order order : orders) {
+            if (order.getOrderStatus() == OrderStatus.NEW ||order.getOrderStatus() == OrderStatus.COOKING || order.getOrderStatus() == OrderStatus.PREPARED || order.getOrderStatus() == OrderStatus.SERVED) {
+               result= order.toString();
+            } else {
+                result= "No orders.";
+            }
+        }
+        return result;
     }
 
     public void showMenu(Menu menu){
@@ -56,8 +65,9 @@ private Order order;
     }
 
     //creating an order
-public Order createAnOrder(Order order){
-    OrderFactory.createAnOrder(order);
+public Order createAnOrder(){
+        Order order=null;
+    createAnOrder();
     this.dailyIncome+= order.getTotalSum();
     return order;
 }

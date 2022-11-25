@@ -3,10 +3,8 @@ import java.util.List;
 
 abstract public class Еmploye {
     private String name;
-    //private List<Order> orders = new ArrayList<>();
-
-    abstract public void showPossibleActions();
-
+      abstract public void showPossibleActions();
+    abstract  public String viewOrders(List<Order> orders);
     public String getName() {
         return name;
     }
@@ -15,17 +13,9 @@ abstract public class Еmploye {
         this.name = name;
     }
 
-//    public List<Order> getOrders() {
-//        return orders;
-//    }
-//
-//    public void setOrders(List<Order> orders) {
-//        this.orders = orders;
-//    }
-
     public Еmploye(String name) {
         this.name = name;
         //this.orders = orders;
     }
-   abstract  public List<Order> viewOrders(List<Order> orders);
+
 }
