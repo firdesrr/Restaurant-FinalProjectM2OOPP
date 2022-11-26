@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="558bd6dc-aff9-40b9-b50e-a79bac7c3453" name="Changes" comment="changes in Steward, Menu, Order">
+    <list default="true" id="558bd6dc-aff9-40b9-b50e-a79bac7c3453" name="Changes" comment="changes in Steward, Cook, Restaurant">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CookFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CookFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Steward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steward.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Еmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Еmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StewardCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StewardFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669484203000</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="changes in Steward, Cook, Restaurant">
+      <created>1669500099874</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669500099874</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,7 +230,8 @@
     <MESSAGE value="Changes in classes MenuFactory, OrderFactory,Dish, Drink" />
     <MESSAGE value="class Table" />
     <MESSAGE value="changes in Steward, Menu, Order" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes in Steward, Menu, Order" />
+    <MESSAGE value="changes in Steward, Cook, Restaurant" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes in Steward, Cook, Restaurant" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
