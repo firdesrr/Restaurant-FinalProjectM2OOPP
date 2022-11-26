@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="558bd6dc-aff9-40b9-b50e-a79bac7c3453" name="Changes" comment="Changes in classes MenuFactory, OrderFactory,Dish, Drink" />
+    <list default="true" id="558bd6dc-aff9-40b9-b50e-a79bac7c3453" name="Changes" comment="class Table">
+      <change afterPath="$PROJECT_DIR$/src/MenuFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Table.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +40,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CheckCode" />
+        <entry key="$PROJECT_DIR$" value="MenuFactory" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -173,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669468036141</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="class Table">
+      <created>1669468461114</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669468461114</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +207,7 @@
     <MESSAGE value="Created class OrderFactory" />
     <MESSAGE value="Changes in classes Order, OrderFactory,...&#10;class TimeNotification" />
     <MESSAGE value="Changes in classes MenuFactory, OrderFactory,Dish, Drink" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in classes MenuFactory, OrderFactory,Dish, Drink" />
+    <MESSAGE value="class Table" />
+    <option name="LAST_COMMIT_MESSAGE" value="class Table" />
   </component>
 </project>
