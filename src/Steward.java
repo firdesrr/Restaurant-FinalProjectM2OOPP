@@ -1,10 +1,13 @@
+import sun.awt.ComponentFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Steward extends Еmploye {
 private double dailyIncome;
-private Menu menu=MenuFactory.createMenu();
+    private ComponentFactory MenuFactory;
+    private Menu menu= (Menu) MenuFactory.createMenu();
 private List <Order> orders;
 
 
