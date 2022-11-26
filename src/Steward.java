@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Steward extends Еmployee {
     private double dailyIncome;
     private Menu menu = MenuFactory.createMenu();
-    private List<Order> orders=new ArrayList<>();
 
 
     public double getDailyIncome() {
@@ -16,23 +15,22 @@ public class Steward extends Еmployee {
         this.dailyIncome = dailyIncome;
     }
 
-    @Override
-    public void showPossibleActions() {
-        //actions for steward
 
+    public void showPossibleActions(List<Order> orders) {
+        //actions for steward
         System.out.println("Steward's actions: \n" +
-                "1. Show menu\n" +
-                "2. View orders\n" +
-                "3. Create an order\n" +
-                "4. Edit an order - Add a dish\n" +
-                "5. Edit an order - Add a drink\n" +
-                "6. Edit an order - Remove a dish\n" +
-                "7. Edit an order - Remove a drink\n" +
-                "8. Serve an order\n" +
-                "9. Finalize an order\n" +
-                "10. Add a dish to menu\n" +
-                "11. Add a drink to menu\n"
-              //  "12. Send an order to the kitchen"
+                        "1. Show menu\n" +
+                        "2. View orders\n" +
+                        "3. Create an order\n" +
+                        "4. Edit an order - Add a dish\n" +
+                        "5. Edit an order - Add a drink\n" +
+                        "6. Edit an order - Remove a dish\n" +
+                        "7. Edit an order - Remove a drink\n" +
+                        "8. Serve an order\n" +
+                        "9. Finalize an order\n" +
+                        "10. Add a dish to menu\n" +
+                        "11. Add a drink to menu\n"
+                //  "12. Send an order to the kitchen"
         );
 
         System.out.print("Choose an action: ");
@@ -44,37 +42,48 @@ public class Steward extends Еmployee {
         switch (n) {
             case 1:
                 showMenu(menu);
+                break;
             case 2:
                 this.viewOrders(orders);
+                break;
             case 3:
                 order = OrderFactory.createAnOrder();
                 System.out.println("Current sum is: " + order.getTotalSum());
+                break;
             case 4:
                 dish = Dish.addADishToMenu();
                 order.addDish(dish);
                 System.out.println("Current sum is: " + order.getTotalSum());
+                break;
             case 5:
                 drink = Drink.addADrinkToMenu();
                 order.addDrink(drink);
                 System.out.println("Current sum is: " + order.getTotalSum());
+                break;
             case 6:
                 order.removeDish();
+                break;
             case 7:
                 order.removeDrink();
+                break;
             case 8:
                 serveOrder(order);
+                break;
             case 9:
-                finalizeOrder(order);
+                finalizeOrder(orders);
+                break;
             case 10:
                 menu.addDish(Dish.addADishToMenu());
+                break;
             case 11:
                 menu.addDrink(Drink.addADrinkToMenu());
-           // case 12: sendToKitchen();
+                break;
+            // case 12: sendToKitchen();
         }
     }
 
-    @Override
-    public String viewOrders(List<Order> orders) {
+
+    private String viewOrders(List<Order> orders) {
         String result = null;
         for (Order order : orders) {
             if (order.getOrderStatus() != OrderStatus.PAID) {
@@ -90,11 +99,17 @@ public class Steward extends Еmployee {
         System.out.println(menu);
     }
 
-    public void finalizeOrder(Order order) {
-        order.setOrderStatus(OrderStatus.PAID);
-        this.dailyIncome += order.getTotalSum();
-        System.out.println("Order on table " + order.getTable().getTableNum() + " was finalized.");
-        orders.remove(order);
+    public void finalizeOrder(List<Order> orders) {
+        System.out.println("Enter a number of order: ");
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
+        while (number < 0 || number > orders.size()) {
+            number = scan.nextInt();
+        }
+        orders.get(number - 1).setOrderStatus(OrderStatus.PAID);
+        this.dailyIncome += orders.get(number - 1).getTotalSum();
+        System.out.println("Order on table " + orders.get(number - 1).getTable().getTableNum() + " was finalized.");
+        orders.remove(orders.get(number - 1));
     }
 
     public void serveOrder(Order order) {
