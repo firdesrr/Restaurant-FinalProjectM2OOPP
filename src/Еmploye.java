@@ -15,7 +15,7 @@ abstract public class Еmploye {
 
     public Еmploye(String name) {
         this.name = name;
-        //this.orders = orders;
+
     }
 
 }
