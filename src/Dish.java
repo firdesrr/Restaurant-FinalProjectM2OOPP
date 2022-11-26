@@ -39,14 +39,15 @@ public static Dish addADishToMenu(){
     Scanner scan = new Scanner(System.in);
     System.out.println("Enter a dish name: ");
     dish.setName(scan.nextLine());
+    System.out.println( );
     System.out.println("Enter a dish price: ");
     dish.setPrice(scan.nextDouble());
-    System.out.println("Enter a dish type: ");
+    System.out.println("Enter a dish type:\n   APPETIZER,\n" +
+            "    MAIN_COURSE,\n" +
+            "    DESSERT,: ");
     dish.setType(TypeOfDish.valueOf(scan.nextLine().toUpperCase()));
     return dish;
 }
-
-
      @Override
     public String toString() {
         return "\nDish details:" +

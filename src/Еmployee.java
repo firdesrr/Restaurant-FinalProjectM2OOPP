@@ -2,8 +2,9 @@ import java.util.List;
 
 abstract public class Еmployee {
     private String name;
-      abstract public void showPossibleActions();
-    abstract  public String viewOrders(List<Order> orders);
+
+
+  abstract  public void showPossibleActions(List<Order> orders);
     public String getName() {
         return name;
     }

@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class OrderFactory {
 
     public static Order createAnOrder() {
-        boolean isAnother = true;
-        Order order = null;
+        boolean isAnother;
+        Order order=new Order();
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Date: ");
@@ -33,11 +33,6 @@ public class OrderFactory {
         }
         while (isAnother);
         return order;
-    }
-
-    public static List<Order> addOrderToList(List listOfOrders) {
-                listOfOrders.add(createAnOrder());
-        return listOfOrders;
     }
 
     public static boolean validateAnOrder(Order order) {

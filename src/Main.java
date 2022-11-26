@@ -3,18 +3,23 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+        public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
-
+        Cook cook=new Cook( "Manchev", 0);
         Steward steward=new Steward("Petrov",0.0);
-        steward.showPossibleActions();
+        Menu menu=MenuFactory.createMenu();
+        Order order;
+        List <Order> orders = null;
+        Restaurant restaurant=new Restaurant(steward, cook,menu,orders);
+
 
         System.out.println("************************************************");
         System.out.println("***Restaurant service information system***");
         System.out.println("************************************************");
         System.out.println();
-        System.out.println("Enter your position (steward or cook): ");
-        String position = scan.nextLine();
+
+
+restaurant.workingRestaurant();
 
 
 //        Menu menu = new MenuOfDishesAndDrinks(dishes, drinks);
