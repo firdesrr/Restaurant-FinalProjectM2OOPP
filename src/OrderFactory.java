@@ -1,20 +1,8 @@
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class OrderFactory {
-
-  public static double calculateTotalSum(List<Dish> orderDishes, List<Drink> orderDrinks) {
-        double totalSum = 0.0;
-        for (Dish dish : orderDishes) {
-            totalSum += dish.getPriceOfDish();
-        }
-        for (Drink drink : orderDrinks) {
-            totalSum += drink.getPriceOfDrink();
-        }
-        return totalSum;
-    }
 
     public static Order createAnOrder() {
         boolean isAnother = true;
@@ -29,27 +17,26 @@ public class OrderFactory {
         order.setTable(new Table(scan.nextInt(), false));
         order.setOrderStatus(OrderStatus.NEW);
         do {
-            Dish dish=Dish.addADish();
+            Dish dish=Dish.addADishToMenu();
             order.setDishes(Collections.singletonList(dish));
             System.out.println("Do yo have another dish?");
             isAnother = scan.nextBoolean();
-            order.setTotalSum(order.getTotalSum()+dish.getPriceOfDish());
+            order.setTotalSum(order.getTotalSum()+dish.getPrice());
         }
         while (isAnother);
         do {
-            Drink drink=Drink.addADrink();
+            Drink drink=Drink.addADrinkToMenu();
             order.setDrinks(Collections.singletonList(drink));
             System.out.println("Do yo have another drink?");
             isAnother = scan.nextBoolean();
-            order.setTotalSum(order.getTotalSum()+drink.getPriceOfDrink());
+            order.setTotalSum(order.getTotalSum()+drink.getPrice());
         }
         while (isAnother);
         return order;
     }
 
-    public static List<Order> createListOfOrders() {
-        List<Order> listOfOrders = new ArrayList<>();
-        listOfOrders.add(createAnOrder());
+    public static List<Order> addOrderToList(List listOfOrders) {
+                listOfOrders.add(createAnOrder());
         return listOfOrders;
     }
 

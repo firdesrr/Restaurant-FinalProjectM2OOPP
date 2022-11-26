@@ -1,7 +1,6 @@
-import java.util.ArrayList;
 import java.util.List;
 
-abstract public class Еmploye {
+abstract public class Еmployee {
     private String name;
       abstract public void showPossibleActions();
     abstract  public String viewOrders(List<Order> orders);
@@ -13,7 +12,7 @@ abstract public class Еmploye {
         this.name = name;
     }
 
-    public Еmploye(String name) {
+    public Еmployee(String name) {
         this.name = name;
 
     }

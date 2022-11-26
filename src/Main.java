@@ -17,7 +17,7 @@ public class Main {
         String position = scan.nextLine();
 
 
-//        MenuOfDishesAndDrinks menu = new MenuOfDishesAndDrinks(dishes, drinks);
+//        Menu menu = new MenuOfDishesAndDrinks(dishes, drinks);
 //        System.out.println( menu);
     }
 }

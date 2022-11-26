@@ -2,15 +2,10 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class Cook extends Еmploye {
+public class Cook extends Еmployee {
     private int countOfPreparedOrders = 0;
-
-    public Cook(String name, int countOfPreparedOrders) {
-        super(name);
-        this.countOfPreparedOrders = countOfPreparedOrders;
-    }
-
-    public int getCountOfPreparedOrders() {
+    List<Order> orders;
+       public int getCountOfPreparedOrders() {
         return countOfPreparedOrders;
     }
 
@@ -21,11 +16,9 @@ public class Cook extends Еmploye {
 
     @Override
     public void showPossibleActions() {
-
-        System.out.println( "1. Show new orders\n+" +
+        System.out.println( "1. View new orders\n+" +
                 "2. Cook meals\n" +
-                "3. Finish order");
-        List<Order> orders=OrderFactory.createListOfOrders();
+                "3. Prepare an order");
         Order order=OrderFactory.createAnOrder();
         System.out.print( "Choose an action: ");
         Scanner scan=new Scanner(System.in);
@@ -33,7 +26,7 @@ public class Cook extends Еmploye {
         switch (n) {
             case 1: this.viewOrders(orders);
             case 2: this.cookMeals(orders);
-            case 3: this.finishOrder(order);
+            case 3: this.prepareOrder(order);
         }
     }
 
@@ -55,12 +48,15 @@ public class Cook extends Еmploye {
         }
     }
 
-    public void finishOrder(Order order) {
+    public void prepareOrder(Order order) {
         order.setOrderStatus(OrderStatus.PREPARED);
-        System.out.println( "The order for table number " +order.getTable().getTableNum() + " has being prepared.");
+        System.out.println( "The order for table number " +order.getTable().getTableNum() + " has been prepared.");
             this.countOfPreparedOrders++;
     }
-
+    public Cook(String name, int countOfPreparedOrders) {
+        super(name);
+        this.countOfPreparedOrders = countOfPreparedOrders;
+    }
     @Override
     public String toString() {
         return "Cook details:" +
