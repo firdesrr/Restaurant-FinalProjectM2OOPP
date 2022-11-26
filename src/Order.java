@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Order implements Orderable {
     private String date;//dd-mm-yyy
     private String timeOfCreation;//hh:mm:ss
     private Table table;
-    private OrderStatus orderStatus=OrderStatus.NEW;
+    private OrderStatus orderStatus = OrderStatus.NEW;
     private List<Dish> dishes = new ArrayList<>();
     private List<Drink> drinks = new ArrayList<>();
     private double totalSum = 0.0;
@@ -14,13 +15,42 @@ public class Order implements Orderable {
     @Override
     public void addDish(Dish dish) {
         dishes.add(dish);
-        totalSum += dish.getPriceOfDish();
+        System.out.println("A dish named " + dish.getName() + " has been added.");
+        totalSum += dish.getPrice();
     }
 
     @Override
     public void addDrink(Drink drink) {
         drinks.add(drink);
-        totalSum += drink.getPriceOfDrink();
+        System.out.println("A drink named " + drink.getName() + " has been added.");
+        totalSum += drink.getPrice();
+    }
+
+    public void removeDish() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter dish name to remove:");
+        String nameDishToRemove = scan.nextLine();
+        for (Dish currentDish : dishes) {
+            if (currentDish.getName().toLowerCase().equals(nameDishToRemove.toLowerCase())) {
+                totalSum -= currentDish.getPrice();
+                dishes.remove(currentDish);
+                System.out.println("A dish named " + nameDishToRemove + " has been added.");
+            } else System.out.println("A dish named " + nameDishToRemove + " is not in order.");
+            break;
+        }
+      }
+    public void removeDrink() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter drink name to remove:");
+        String nameDrinkToRemove = scan.nextLine();
+        for (Drink currentDrink : drinks) {
+            if (currentDrink.getName().toLowerCase().equals(nameDrinkToRemove.toLowerCase())) {
+                totalSum -= currentDrink.getPrice();
+                dishes.remove(currentDrink);
+                System.out.println("A dish named " + nameDrinkToRemove + " has been added.");
+            } else System.out.println("A dish named " + nameDrinkToRemove + " is not in order.");
+            break;
+        }
     }
 
     public String getDate() {
@@ -39,7 +69,7 @@ public class Order implements Orderable {
         this.timeOfCreation = timeOfCreation;
     }
 
-       public OrderStatus getOrderStatus() {
+    public OrderStatus getOrderStatus() {
         return orderStatus;
     }
 
