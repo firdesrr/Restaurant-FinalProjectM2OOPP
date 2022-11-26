@@ -15,8 +15,7 @@ public class Main {
         System.out.println();
         System.out.println("Enter your position (steward or cook): ");
         String position = scan.nextLine();
-        OrderFactory.orderDishes();
-        OrderFactory.orderDrinks();
+
 
 //        MenuOfDishesAndDrinks menu = new MenuOfDishesAndDrinks(dishes, drinks);
 //        System.out.println( menu);

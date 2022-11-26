@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Drink {
     private String nameOfDrink;
     private double priceOfDrink;
@@ -27,6 +29,17 @@ public class Drink {
         this.typeOfDrink = typeOfDrink;
     }
 
+    public static Drink addADrink(){
+        Drink drink = null;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter a dish name: ");
+        drink.setNameOfDrink(scan.nextLine());
+        System.out.println("Enter a dish price: ");
+        drink.setPriceOfDrink(scan.nextDouble());
+        System.out.println("Enter a dish type: ");
+        drink.setTypeOfDrink(TypeOfDrink.valueOf(scan.nextLine().toUpperCase()));
+        return drink;
+    }
     public Drink(String nameOfDrink, double priceOfDrink, TypeOfDrink typeOfDrink) {
         this.nameOfDrink = nameOfDrink;
         this.priceOfDrink = priceOfDrink;

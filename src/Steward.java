@@ -4,10 +4,8 @@ import java.util.Scanner;
 
 public class Steward extends Еmploye {
 private double dailyIncome;
-private List <Dish> dishes=new ArrayList<>();
-private List <Drink> drinks=new ArrayList<>();
-private Menu menu=new Menu(dishes,drinks);
-private List <Order> orders=new ArrayList<>();
+private Menu menu=MenuFactory.createMenu();
+private List <Order> orders;
 
 
 
@@ -36,7 +34,7 @@ private List <Order> orders=new ArrayList<>();
         Scanner scan=new Scanner(System.in);
         int n=scan.nextInt();
         switch (n) {
-            case 1: this.showMenu(menu);
+            case 1: this.menu.toString();
             case 2: this.viewOrders(orders);
             case 3: OrderFactory.createAnOrder();
         }
@@ -55,9 +53,9 @@ private List <Order> orders=new ArrayList<>();
         return result;
     }
 
-    public void showMenu(Menu menu){
-        System.out.println( menu);
-    }
+//    public void showMenu(Menu menu){
+//        System.out.println( menu);
+//    }
 
     public Steward(String name, double dailyIncome) {
         super(name);
