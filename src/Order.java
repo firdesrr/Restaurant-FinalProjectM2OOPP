@@ -94,6 +94,9 @@ public class Order implements Orderable {
         this.totalSum = totalSum;
     }
 
+    public Order() {
+    }
+
     @Override
     public String toString() {
         return "Order{" +

@@ -2,10 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
-  private  List<Dish> dishes=new ArrayList<>();
-  private  List<Drink> drinks=new ArrayList<>();
-
-
+  private  List<Dish> dishes;
+  private  List<Drink> drinks;
 
     public List<Dish> getDishes() {
         return dishes;
