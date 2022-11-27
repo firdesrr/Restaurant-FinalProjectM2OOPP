@@ -34,6 +34,6 @@ public class MenuFactory {
         drinks.add(drink5);
         drinks.add(drink6);
 
-        return new Menu <Dish, Drink>(dishes, drinks);
+        return new Menu<>(dishes, drinks);
     }
 }

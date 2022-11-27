@@ -1,4 +1,4 @@
 public interface Orderable {
-    public void addDish(Dish dish);
-    public void addDrink(Drink drink);
+    public Dish addDish(Dish dish);
+    public Drink addDrink(Drink drink);
 }

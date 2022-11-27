@@ -1,9 +1,6 @@
-import java.sql.Time;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,17 +15,19 @@ public class Order implements Orderable {
 
 
     @Override
-    public void addDish(Dish dish) {
+    public Dish addDish(Dish dish) {
         dishes.add(dish);
         System.out.println("A dish named " + dish.getName() + " has been added.");
         totalSum += dish.getPrice();
+        return dish;
     }
 
     @Override
-    public void addDrink(Drink drink) {
+    public Drink addDrink(Drink drink) {
         drinks.add(drink);
         System.out.println("A drink named " + drink.getName() + " has been added.");
         totalSum += drink.getPrice();
+        return drink;
     }
 
     public void removeDish() {
@@ -53,7 +52,7 @@ public class Order implements Orderable {
         for (Drink currentDrink : drinks) {
             if (currentDrink.getName().toLowerCase().equals(nameDrinkToRemove.toLowerCase())) {
                 totalSum -= currentDrink.getPrice();
-                dishes.remove(currentDrink);
+                drinks.remove(currentDrink);
                 System.out.println("A dish named " + nameDrinkToRemove + " has been added.");
             } else System.out.println("A dish named " + nameDrinkToRemove + " is not in order.");
             break;

@@ -33,7 +33,9 @@ public class Drink {
         Drink drink = null;
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter a dish name: ");
-        drink.setName(scan.nextLine());
+        String dishName=scan.nextLine();
+        drink.setName(dishName);
+        scan.nextLine();
         System.out.println("Enter a dish price: ");
         drink.setPrice(scan.nextDouble());
         System.out.println("Enter a dish type: ");
