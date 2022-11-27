@@ -80,6 +80,7 @@ public class Steward extends Еmployee {
                 break;
             // case 12: sendToKitchen();
         }
+        scan.close();
     }
 
 
@@ -110,6 +111,7 @@ public class Steward extends Еmployee {
         this.dailyIncome += orders.get(number - 1).getTotalSum();
         System.out.println("Order on table " + orders.get(number - 1).getTable().getTableNum() + " was finalized.");
         orders.remove(orders.get(number - 1));
+        scan.close();
     }
 
     public void serveOrder(Order order) {

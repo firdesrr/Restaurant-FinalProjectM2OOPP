@@ -3,14 +3,19 @@ import java.util.Scanner;
 public class Dish {
     private String name;
     private double price;
-    private TypeOfDish type;
+    private String type;
 
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        try {
+            this.name = name;
+        } catch (NullPointerException e ){
+            System.out.println(  e.toString());
+                   }
+
     }
 
     public double getPrice() {
@@ -21,34 +26,43 @@ public class Dish {
         this.price = price;
     }
 
-    public TypeOfDish getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeOfDish type) {
+    public void setType(String type) {
+
         this.type = type;
     }
 
-    public Dish(String name, double priceOfDish, TypeOfDish typeOfDish) {
+    public Dish(String name, double priceOfDish, String typeOfDish) {
         this.name = name;
         this.price = priceOfDish;
         this.type = typeOfDish;
     }
 public static Dish addADishToMenu(){
-        Dish dish = null;
+        Dish dish = new Dish();
     Scanner scan = new Scanner(System.in);
     System.out.println("Enter a dish name: ");
-    dish.setName(scan.nextLine());
-    System.out.println( );
-    System.out.println("Enter a dish price: ");
-    dish.setPrice(scan.nextDouble());
+   String dishName=scan.nextLine();
+    dish.setName(dishName);
+     System.out.println("Enter a dish price: ");
+     double price=scan.nextDouble();
+     dish.setPrice(price);
     System.out.println("Enter a dish type:\n   APPETIZER,\n" +
             "    MAIN_COURSE,\n" +
             "    DESSERT,: ");
-    dish.setType(TypeOfDish.valueOf(scan.nextLine().toUpperCase()));
+  scan.nextLine();
+    String type= scan.nextLine().toUpperCase();
+    dish.setType(type);
+    scan.close();
     return dish;
 }
-     @Override
+
+    public Dish() {
+    }
+
+    @Override
     public String toString() {
         return "\nDish details:" +
                 "\nname->" + name +

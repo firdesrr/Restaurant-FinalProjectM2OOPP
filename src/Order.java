@@ -1,10 +1,15 @@
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class Order implements Orderable {
-    private String date;//dd-mm-yyy
-    private String timeOfCreation;//hh:mm:ss
+    private LocalDate date;//dd-mm-yyy
+    private LocalTime timeOfCreation;//hh:mm:ss
     private Table table;
     private OrderStatus orderStatus = OrderStatus.NEW;
     private List<Dish> dishes = new ArrayList<>();
@@ -38,6 +43,7 @@ public class Order implements Orderable {
             } else System.out.println("A dish named " + nameDishToRemove + " is not in order.");
             break;
         }
+        scan.close();
       }
     public void removeDrink() {
         Scanner scan = new Scanner(System.in);
@@ -51,21 +57,22 @@ public class Order implements Orderable {
             } else System.out.println("A dish named " + nameDrinkToRemove + " is not in order.");
             break;
         }
+        scan.close();
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public String getTimeOfCreation() {
+    public LocalTime getTimeOfCreation() {
         return timeOfCreation;
     }
 
-    public void setTimeOfCreation(String timeOfCreation) {
+    public void setTimeOfCreation(LocalTime timeOfCreation) {
         this.timeOfCreation = timeOfCreation;
     }
 
@@ -114,9 +121,9 @@ public class Order implements Orderable {
     public Order(String s, String s1, int i, boolean b, OrderStatus aNew, List<Dish> dishes, List<Drink> drinks, double v) {
     }
 
-    public Order(String date, String timeOfCreation, Table table, OrderStatus orderStatus, List<Dish> dishes, List<Drink> drinks, double totalSum) {
-        this.date = date;
-        this.timeOfCreation = timeOfCreation;
+    public Order(Table table, OrderStatus orderStatus, List<Dish> dishes, List<Drink> drinks, double totalSum) {
+        this.date = LocalDate.now();
+        this.timeOfCreation = LocalTime.now();
         this.table = table;
         this.orderStatus = orderStatus;
         this.dishes = dishes;

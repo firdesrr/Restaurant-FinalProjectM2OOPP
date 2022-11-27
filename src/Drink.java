@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Drink {
     private String name;
     private double price;
-    private TypeOfDrink type;
+    private String type;
 
     public String getName() {
         return name;
@@ -21,11 +21,11 @@ public class Drink {
         this.price = price;
     }
 
-    public TypeOfDrink getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeOfDrink type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -37,10 +37,13 @@ public class Drink {
         System.out.println("Enter a dish price: ");
         drink.setPrice(scan.nextDouble());
         System.out.println("Enter a dish type: ");
-        drink.setType(TypeOfDrink.valueOf(scan.nextLine().toUpperCase()));
+        String type=scan.nextLine().toUpperCase();
+        drink.setType(type);
+        scan.close();
         return drink;
+
     }
-    public Drink(String nameOfDrink, double price, TypeOfDrink typeOfDrink) {
+    public Drink(String nameOfDrink, double price, String typeOfDrink) {
         this.name = nameOfDrink;
         this.price = price;
         this.type = typeOfDrink;

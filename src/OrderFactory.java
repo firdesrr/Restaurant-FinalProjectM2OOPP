@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -9,29 +11,29 @@ public class OrderFactory {
         Order order=new Order();
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Date: ");
-        order.setDate(scan.nextLine());
-        System.out.println("Time: ");
-        order.setTimeOfCreation(scan.nextLine());
+        order.setDate(LocalDate.now());
+        order.setTimeOfCreation(LocalTime.now());
         System.out.println("Table number: ");
         order.setTable(new Table(scan.nextInt(), false));
         order.setOrderStatus(OrderStatus.NEW);
-        do {
-            Dish dish=Dish.addADishToMenu();
-            order.setDishes(Collections.singletonList(dish));
-            System.out.println("Do yo have another dish?");
-            isAnother = scan.nextBoolean();
-            order.setTotalSum(order.getTotalSum()+dish.getPrice());
-        }
-        while (isAnother);
-        do {
-            Drink drink=Drink.addADrinkToMenu();
-            order.setDrinks(Collections.singletonList(drink));
-            System.out.println("Do yo have another drink?");
-            isAnother = scan.nextBoolean();
-            order.setTotalSum(order.getTotalSum()+drink.getPrice());
-        }
-        while (isAnother);
+
+//        do {
+//           // Dish dish=Dish.addADishToMenu();
+//           // order.setDishes(Collections.singletonList(dish));
+//            System.out.println("Do yo have another dish?");
+//            isAnother = scan.nextBoolean();
+//            order.setTotalSum(order.getTotalSum()+dish.getPrice());
+//                    }
+//         while (isAnother);
+//        do {
+//            Drink drink=Drink.addADrinkToMenu();
+//            order.setDrinks(Collections.singletonList(drink));
+//            System.out.println("Do yo have another drink?");
+//            isAnother = scan.nextBoolean();
+//            order.setTotalSum(order.getTotalSum()+drink.getPrice());
+//        }
+//        while (isAnother);
+        scan.close();
         return order;
     }
 
