@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Steward extends Еmployee {
     private double dailyIncome;
     private Menu <Dish,Drink>menu ;
+    private List <Order>orders;
+    private Order order;
 
 
     public double getDailyIncome() {
@@ -34,9 +36,6 @@ public class Steward extends Еmployee {
 
         System.out.print("Choose an action: ");
         Scanner scan = new Scanner(System.in);
-        Order order = null;
-        Dish dish;
-        Drink drink;
         int n = scan.nextInt();
         switch (n) {
             case 1:
@@ -46,17 +45,26 @@ public class Steward extends Еmployee {
                 this.viewOrders(orders);
                 break;
             case 3:
-                order = OrderFactory.createAnOrder();
+                order=OrderFactory.createAnOrder();
+                orders.add(order );
                 System.out.println("Current sum is: " + order.getTotalSum());
                 break;
             case 4:
-                dish = Dish.createDish();
-                order.addDish(dish);
+                System.out.println( "Enter  number of dish: ");
+                int numOfDish = scan.nextInt();
+                Dish dish = order.addDish(menu.getDishes().get(numOfDish-1));
+                if (dish != null) {
+                    order.addDish(dish);
+                }
                 System.out.println("Current sum is: " + order.getTotalSum());
                 break;
             case 5:
-                drink = Drink.addADrinkToMenu();
-                order.addDrink(drink);
+                System.out.println( "Enter  number of dish: ");
+                int numOfDrink = scan.nextInt();
+                Drink drink = order.addDrink(menu.getDrinks().get(numOfDrink-1));
+                if (drink != null) {
+                    order.addDrink(drink);
+                }
                 System.out.println("Current sum is: " + order.getTotalSum());
                 break;
             case 6:
@@ -66,7 +74,7 @@ public class Steward extends Еmployee {
                 order.removeDrink();
                 break;
             case 8:
-                serveOrder(order);
+                serveOrder(orders);
                 break;
             case 9:
                 finalizeOrder(orders);
@@ -83,7 +91,7 @@ public class Steward extends Еmployee {
     }
 
 
-    private String viewOrders(List<Order> orders) {
+    private void viewOrders(List<Order> orders) {
         String result = null;
         for (Order order : orders) {
             if (order.getOrderStatus() != OrderStatus.PAID) {
@@ -92,11 +100,11 @@ public class Steward extends Еmployee {
                 result = "The order has been paid";
             }
         }
-        return result;
+        System.out.println( result);
     }
 
     public void showMenu(Menu <Dish,Drink>menu) {
-        menu.toString();
+        System.out.println( menu);
     }
 
     public void finalizeOrder(List<Order> orders) {
@@ -113,12 +121,14 @@ public class Steward extends Еmployee {
         scan.close();
     }
 
-    public void serveOrder(Order order) {
-        if (order.getOrderStatus() == OrderStatus.PREPARED) {
-            System.out.println("Order on table " + order.getTable().getTableNum() + " was served.");
-            order.setOrderStatus(OrderStatus.SERVED);
-        } else {
-            System.out.println("Order on table " + order.getTable().getTableNum() + " is not prepared yet.");
+    public void serveOrder(List <Order> orders) {
+        for (Order order : orders) {
+            if (order.getOrderStatus() == OrderStatus.PREPARED) {
+                System.out.println("Order on table " + order.getTable().getTableNum() + " was served.");
+                order.setOrderStatus(OrderStatus.SERVED);
+            } else {
+                System.out.println("Order on table " + order.getTable().getTableNum() + " is not prepared yet.");
+            }
         }
     }
 

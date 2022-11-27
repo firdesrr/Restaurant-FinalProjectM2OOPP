@@ -70,7 +70,7 @@ public class Restaurant {
         scan.close();
     }
 
-    public Restaurant(Steward steward, Cook cook, Menu menu, List<Order> orders, List<Table> tables) {
+    public Restaurant(Steward steward, Cook cook, Menu <Dish,Drink> menu, List<Order> orders, List<Table> tables) {
         this.steward = steward;
         this.cook = cook;
         this.menu = menu;

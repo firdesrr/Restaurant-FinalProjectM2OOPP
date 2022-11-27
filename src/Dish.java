@@ -40,6 +40,7 @@ public class Dish {
         this.price = priceOfDish;
         this.type = typeOfDish;
     }
+
 public static Dish createDish(){
         Dish dish = new Dish();
     Scanner scan = new Scanner(System.in);
