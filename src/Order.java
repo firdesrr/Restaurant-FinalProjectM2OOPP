@@ -146,4 +146,9 @@ public class Order implements Orderable {
                 ", totalSum=" + totalSum +
                 '}';
     }
+
+    private class Table {
+        public String getTableNum() {
+        }
+    }
 }
