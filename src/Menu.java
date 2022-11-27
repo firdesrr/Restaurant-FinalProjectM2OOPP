@@ -25,24 +25,24 @@ public class Menu<Dish, Drink> {
 
     }
 
-    public List<Drink> addDrink(Drink drink) {
+    public Drink  addDrink(Drink drink) {
         if (!(this.drinks.contains(drink))) {
             drinks.add(drink);
             System.out.println("The drink has been added to the menu.");
         } else {
             System.out.println("The menu already contains the drink.");
         }
-        return this.drinks;
+        return drink;
     }
 
-    public List<Dish> addDish(Dish dish) {
+    public Dish addDish(Dish dish) {
         if (!this.dishes.contains(dish)) {
             dishes.add(dish);
             System.out.println("The dish has been added to the menu.");
         } else {
             System.out.println("The menu already contains the dish.");
         }
-        return this.dishes;
+        return dish;
     }
 
     public Menu(List<Dish> dishes, List<Drink> drinks) {

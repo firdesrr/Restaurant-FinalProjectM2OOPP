@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="558bd6dc-aff9-40b9-b50e-a79bac7c3453" name="Changes" comment="changes in Steward, Cook, Restaurant">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Orderable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Orderable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Steward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Steward.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +31,7 @@
                 <branch-info repo="$PROJECT_DIR$" source="Add_fields_in_classes" />
                 <branch-info repo="$PROJECT_DIR$" source="InitializeDishes" />
                 <branch-info repo="$PROJECT_DIR$" source="Method_Impementation" />
+                <branch-info repo="$PROJECT_DIR$" source="Details_working" />
               </list>
             </value>
           </entry>
@@ -253,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669541175433</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="changes in Steward, Cook, Restaurant">
+      <created>1669545525067</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1669545525067</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
