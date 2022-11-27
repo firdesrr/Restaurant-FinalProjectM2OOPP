@@ -8,14 +8,14 @@ public class OrderFactory {
 
     public static Order createAnOrder() {
         boolean isAnother;
-        Order order=new Order();
+        Order order = new Order();
         Scanner scan = new Scanner(System.in);
 
         order.setDate(LocalDate.now());
         order.setTimeOfCreation(LocalTime.now());
         System.out.println("Table number: ");
-
-        order.setTable(new Table(scan.nextInt(), false));
+        int tableNum = scan.nextInt();
+        order.setTable(new Table(tableNum, false));
         order.setOrderStatus(OrderStatus.NEW);
 
 //        do {
