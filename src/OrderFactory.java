@@ -14,6 +14,7 @@ public class OrderFactory {
         order.setDate(LocalDate.now());
         order.setTimeOfCreation(LocalTime.now());
         System.out.println("Table number: ");
+
         order.setTable(new Table(scan.nextInt(), false));
         order.setOrderStatus(OrderStatus.NEW);
 

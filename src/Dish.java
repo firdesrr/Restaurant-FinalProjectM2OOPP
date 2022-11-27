@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Dish {
     private String name;
     private double price;
-    private String type;
+    private String type;//
 
     public String getName() {
         return name;
@@ -40,19 +40,20 @@ public class Dish {
         this.price = priceOfDish;
         this.type = typeOfDish;
     }
-public static Dish addADishToMenu(){
+public static Dish createDish(){
         Dish dish = new Dish();
     Scanner scan = new Scanner(System.in);
     System.out.println("Enter a dish name: ");
    String dishName=scan.nextLine();
+
     dish.setName(dishName);
      System.out.println("Enter a dish price: ");
+    scan.nextLine();
      double price=scan.nextDouble();
      dish.setPrice(price);
     System.out.println("Enter a dish type:\n   APPETIZER,\n" +
             "    MAIN_COURSE,\n" +
             "    DESSERT,: ");
-  scan.nextLine();
     String type= scan.nextLine().toUpperCase();
     dish.setType(type);
     scan.close();

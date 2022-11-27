@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,7 +50,7 @@ public class Steward extends Еmployee {
                 System.out.println("Current sum is: " + order.getTotalSum());
                 break;
             case 4:
-                dish = Dish.addADishToMenu();
+                dish = Dish.createDish();
                 order.addDish(dish);
                 System.out.println("Current sum is: " + order.getTotalSum());
                 break;
@@ -73,7 +72,7 @@ public class Steward extends Еmployee {
                 finalizeOrder(orders);
                 break;
             case 10:
-                menu.addDish(Dish.addADishToMenu());
+                menu.addDish(Dish.createDish());
                 break;
             case 11:
                 menu.addDrink(Drink.addADrinkToMenu());
@@ -90,7 +89,7 @@ public class Steward extends Еmployee {
             if (order.getOrderStatus() != OrderStatus.PAID) {
                 result = order.toString();
             } else {
-                result = "No orders.";
+                result = "The order has been paid";
             }
         }
         return result;
