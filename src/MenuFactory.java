@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuFactory {
-    public static Menu createMenu() {
+    public static Menu  <Dish, Drink>createMenu() {
         Dish dish1 = new Dish("Shopska salata", 8.50, String.valueOf(TypeOfDish.APPETIZER));
         Dish dish2 = new Dish("Ovcharska salata", 10.50, String.valueOf(TypeOfDish.APPETIZER));
         Dish dish3 = new Dish("Kebabcheta s garnitura", 12.50,String.valueOf(TypeOfDish.MAIN_COURSE));
@@ -34,7 +34,6 @@ public class MenuFactory {
         drinks.add(drink5);
         drinks.add(drink6);
 
-        Menu menu = new Menu(dishes, drinks);
-        return menu;
+        return new Menu <Dish, Drink>(dishes, drinks);
     }
 }

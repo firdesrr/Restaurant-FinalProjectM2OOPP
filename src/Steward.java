@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Steward extends Еmployee {
     private double dailyIncome;
-    private Menu menu = MenuFactory.createMenu();
+    private Menu <Dish,Drink>menu ;
 
 
     public double getDailyIncome() {
@@ -95,8 +95,8 @@ public class Steward extends Еmployee {
         return result;
     }
 
-    public void showMenu(Menu menu) {
-        System.out.println(menu);
+    public void showMenu(Menu <Dish,Drink>menu) {
+        menu.toString();
     }
 
     public void finalizeOrder(List<Order> orders) {

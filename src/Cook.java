@@ -39,18 +39,18 @@ private Order chooseOrder(List <Order> orders) {
     scan.close();
     return orders.get(number - 1);
 }
-    private String viewOrders(List<Order> orders) {
+    private void viewOrders(List<Order> orders) {
         String result=null;
         int br=0;
         for (Order order : orders) {
             br++;
             if (order.getOrderStatus() == OrderStatus.NEW ) {
-                result+= br+order.toString();
+                result=result+ br+order.toString();
             } else {
                 result= "No new orders.";
             }
         }
-        return result;
+        System.out.println( result);
     }
     private void cookMeals(Order order) {
             order.setOrderStatus(OrderStatus.COOKING);

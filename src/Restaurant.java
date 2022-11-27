@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Restaurant {
     private Steward steward;
     private Cook cook;
-    private Menu menu;
+    private Menu <Dish, Drink>menu;
     private List<Order> orders;
     private List<Table> tables;
 
@@ -24,11 +24,11 @@ public class Restaurant {
         this.cook = cook;
     }
 
-    public Menu getMenu() {
+    public Menu  <Dish, Drink> getMenu() {
         return menu;
     }
 
-    public void setMenu(Menu menu) {
+    public void setMenu(Menu  <Dish, Drink> menu) {
         this.menu = menu;
     }
 

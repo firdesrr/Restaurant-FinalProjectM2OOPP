@@ -7,7 +7,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Cook cook=new Cook( "Manchev", 0);
         Steward steward=new Steward("Petrov",0.0);
-        Menu menu=MenuFactory.createMenu();
+        Menu  <Dish, Drink> menu=MenuFactory.createMenu();
         List <Table> tables=new ArrayList<>();
         for (int i=0;i<5;i++){
                 tables.add(new Table(i+1,true));
@@ -24,9 +24,5 @@ public class Main {
 
 
 restaurant.workingRestaurant();
-
-
-//        Menu menu = new MenuOfDishesAndDrinks(dishes, drinks);
-//        System.out.println( menu);
     }
 }

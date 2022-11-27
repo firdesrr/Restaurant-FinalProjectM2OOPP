@@ -44,7 +44,8 @@ public class Order implements Orderable {
             break;
         }
         scan.close();
-      }
+    }
+
     public void removeDrink() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter drink name to remove:");
@@ -145,10 +146,5 @@ public class Order implements Orderable {
                 ", drinks=" + drinks +
                 ", totalSum=" + totalSum +
                 '}';
-    }
-
-    private class Table {
-        public String getTableNum() {
-        }
     }
 }
