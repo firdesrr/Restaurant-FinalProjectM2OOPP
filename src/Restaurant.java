@@ -4,8 +4,9 @@ import java.util.Scanner;
 public class Restaurant {
     private Steward steward;
     private Cook cook;
-    private Menu menu;
+    private Menu <Dish, Drink>menu;
     private List<Order> orders;
+    private List<Table> tables;
 
     public Steward getSteward() {
         return steward;
@@ -23,11 +24,11 @@ public class Restaurant {
         this.cook = cook;
     }
 
-    public Menu getMenu() {
+    public Menu  <Dish, Drink> getMenu() {
         return menu;
     }
 
-    public void setMenu(Menu menu) {
+    public void setMenu(Menu  <Dish, Drink> menu) {
         this.menu = menu;
     }
 
@@ -39,8 +40,16 @@ public class Restaurant {
         this.orders = orders;
     }
 
-    public void workingRestaurant() throws Exception  {
-        Scanner scan=new Scanner(System.in);
+    public List<Table> getTables() {
+        return tables;
+    }
+
+    public void setTables(List<Table> tables) {
+        this.tables = tables;
+    }
+
+    public void workingRestaurant() throws Exception {
+        Scanner scan = new Scanner(System.in);
         System.out.println("Enter your position (steward or cook): ");
         String position = scan.nextLine();
         boolean employeeWorks;
@@ -58,13 +67,15 @@ public class Restaurant {
             }
         }
         while (employeeWorks);
+        scan.close();
     }
 
-    public Restaurant(Steward steward, Cook cook, Menu menu, List<Order> orders) {
+    public Restaurant(Steward steward, Cook cook, Menu menu, List<Order> orders, List<Table> tables) {
         this.steward = steward;
         this.cook = cook;
         this.menu = menu;
         this.orders = orders;
+        this.tables = tables;
     }
 
     @Override
@@ -74,6 +85,7 @@ public class Restaurant {
                 ", cook=" + cook +
                 ", menu=" + menu +
                 ", orders=" + orders +
+                ", tables=" + tables +
                 '}';
     }
 }

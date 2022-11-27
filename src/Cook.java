@@ -24,34 +24,36 @@ public class Cook extends Еmployee {
         int n=scan.nextInt();
         switch (n) {
             case 1: this.viewOrders(orders);
-            case 2: this.cookMeal(choseOrder(orders));
-            case 3: this.prepareOrder(choseOrder(orders));
+            case 2: this.cookMeals(chooseOrder(orders));
+            case 3: this.prepareOrder(chooseOrder(orders));
         }
+        scan.close();
     }
-private Order choseOrder( List <Order> orders) {
+private Order chooseOrder(List <Order> orders) {
        System.out.println("Enter a number of order: ");
     Scanner scan = new Scanner(System.in);
     int number = scan.nextInt();
     while (number < 0 || number > orders.size()) {
         number = scan.nextInt();
     }
+    scan.close();
     return orders.get(number - 1);
 }
-    private String viewOrders(List<Order> orders) {
+    private void viewOrders(List<Order> orders) {
         String result=null;
         int br=0;
         for (Order order : orders) {
             br++;
             if (order.getOrderStatus() == OrderStatus.NEW ) {
-                result+= br+order.toString();
+                result=result+ br+order.toString();
             } else {
                 result= "No new orders.";
             }
         }
-        return result;
+        System.out.println( result);
     }
-    private void cookMeal(Order order) {
-           order.setOrderStatus(OrderStatus.COOKING);
+    private void cookMeals(Order order) {
+            order.setOrderStatus(OrderStatus.COOKING);
             System.out.println("The order for table number " + order.getTable().getTableNum() + " is being cooked.");
         }
 

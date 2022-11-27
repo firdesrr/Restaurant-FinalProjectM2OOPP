@@ -1,10 +1,9 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Steward extends Еmployee {
     private double dailyIncome;
-    private Menu menu = MenuFactory.createMenu();
+    private Menu <Dish,Drink>menu ;
 
 
     public double getDailyIncome() {
@@ -51,7 +50,7 @@ public class Steward extends Еmployee {
                 System.out.println("Current sum is: " + order.getTotalSum());
                 break;
             case 4:
-                dish = Dish.addADishToMenu();
+                dish = Dish.createDish();
                 order.addDish(dish);
                 System.out.println("Current sum is: " + order.getTotalSum());
                 break;
@@ -73,13 +72,14 @@ public class Steward extends Еmployee {
                 finalizeOrder(orders);
                 break;
             case 10:
-                menu.addDish(Dish.addADishToMenu());
+                menu.addDish(Dish.createDish());
                 break;
             case 11:
                 menu.addDrink(Drink.addADrinkToMenu());
                 break;
             // case 12: sendToKitchen();
         }
+        scan.close();
     }
 
 
@@ -89,14 +89,14 @@ public class Steward extends Еmployee {
             if (order.getOrderStatus() != OrderStatus.PAID) {
                 result = order.toString();
             } else {
-                result = "No orders.";
+                result = "The order has been paid";
             }
         }
         return result;
     }
 
-    public void showMenu(Menu menu) {
-        System.out.println(menu);
+    public void showMenu(Menu <Dish,Drink>menu) {
+        menu.toString();
     }
 
     public void finalizeOrder(List<Order> orders) {
@@ -110,6 +110,7 @@ public class Steward extends Еmployee {
         this.dailyIncome += orders.get(number - 1).getTotalSum();
         System.out.println("Order on table " + orders.get(number - 1).getTable().getTableNum() + " was finalized.");
         orders.remove(orders.get(number - 1));
+        scan.close();
     }
 
     public void serveOrder(Order order) {
